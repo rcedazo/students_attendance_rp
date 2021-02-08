@@ -1,0 +1,5 @@
+numpy==1.16.2
+mariadb==1.0.5
+pandas==1.2.1
+Pillow==8.1.0
+spidev==3.5
