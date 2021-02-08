@@ -14,7 +14,7 @@ def send_mail(receiver_email, date, description, password, df_csv):
     port = 465
     msg = EmailMessage()
     msg['Subject'] = "ETSIDI Asistencia %s" % description
-    msg['From'] = 'attendancesystem97@gmail.com'
+    msg['From'] = 'SENDER_MAIL'
     msg['To'] = receiver_email
     message = "ETSIDI ASISTENCIA \n \n Alumnos registrados fecha : " + date
     msg.set_content(message)
@@ -29,7 +29,7 @@ def send_mail(receiver_email, date, description, password, df_csv):
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         try:
-            server.login("attendancesystem97@gmail.com", password)
+            server.login("SENDER_MAIL", password)
             server.send_message(msg)
             print("Email sent")
             return True
